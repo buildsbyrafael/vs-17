@@ -1,4 +1,4 @@
-package Aula01.Task02;
+package Aula02.Task02;
 
 import java.util.Scanner;
 
