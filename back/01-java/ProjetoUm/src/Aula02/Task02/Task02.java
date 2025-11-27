@@ -12,6 +12,7 @@ public class Task02 {
         int[] listaQuantidades = new int[CAPACIDADE_MAX];
         double[] listaPrecos = new double[CAPACIDADE_MAX];
 
+        int totalCadastrados = 0;
         int opcao;
 
         do {
@@ -32,6 +33,29 @@ public class Task02 {
             if (opcao == 1) {
                 System.out.println("\n-- Cadastrar Produto --");
 
+                if (totalCadastrados == CAPACIDADE_MAX) {
+                    System.out.println("\nLimite Máximo de Produtos!");
+                    continue;
+                }
+
+                for (int i = 0; i < CAPACIDADE_MAX; i++) {
+                    if (listaNomes[i] == null) {
+                        System.out.print("\nNome do Produto: ");
+                        listaNomes[i] = scanner.nextLine();
+
+                        System.out.print("Quantidade: ");
+                        listaQuantidades[i] = scanner.nextInt();
+
+                        System.out.print("Preço: ");
+                        listaPrecos[i] = scanner.nextDouble();
+                        scanner.nextLine();
+
+                        totalCadastrados++;
+                        System.out.println("\nProduto Cadastrado!");
+                        break;
+                    }
+                }
+
             } else if (opcao == 2) {
                 System.out.println("\n-- Listar Estoque --");
 
@@ -40,6 +64,37 @@ public class Task02 {
 
             } else if (opcao == 4) {
                 System.out.println("\n-- Vender --");
+
+                if (totalCadastrados == 0) {
+                    System.out.println("\nNenhum Produto Cadastrado!");
+                } else {
+                    System.out.print("\nNome do Produto: ");
+                    String nomeBusca = scanner.nextLine();
+
+                    boolean encontrou = false;
+
+                    for (int i = 0; i < CAPACIDADE_MAX; i++) {
+                        if (listaNomes[i] != null && listaNomes[i].equals(nomeBusca)) {
+                            encontrou = true;
+
+                            System.out.println("\nEstoque Atual: " + listaQuantidades[i]);
+                            System.out.print("\nQuantidade de Venda: ");
+                            int qtdVenda = scanner.nextInt();
+                            scanner.nextLine();
+
+                            if (listaQuantidades[i] >= qtdVenda) {
+                                listaQuantidades[i] -= qtdVenda;
+                                System.out.println("\nVenda Realizada! Novo Estoque: " + listaQuantidades[i]);
+                            } else {
+                                System.out.println("\nEstoque Insuficiente!");
+                            }
+                        }
+                    }
+
+                    if (!encontrou) {
+                        System.out.println("\nNão Encontrado!");
+                    }
+                }
 
             } else if (opcao == 5) {
                 System.out.println("\n-- Remover Produto --");
