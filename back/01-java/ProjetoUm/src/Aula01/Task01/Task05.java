@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task05 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         int total, brancos, nulos, validos;
         double percBrancos, percNulos, percValidos;
@@ -30,6 +30,6 @@ public class Task05 {
         System.out.println("Percentual de Nulos: " + percNulos + "%.");
         System.out.println("Percentual de Válidos: " + percValidos + "%.");
 
-        entrada.close();
+        sc.close();
     }
 }
