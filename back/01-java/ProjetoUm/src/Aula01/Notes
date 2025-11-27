@@ -1,0 +1,36 @@
+# Java - Anotações Rápidas
+
+Foco em: Scanner e Switch Case.
+
+---
+
+## 1. Scanner (lendo dados do teclado):
+
+**Importação necessária:**
+`import java.util.Scanner;`
+
+**Criando o objeto Scanner:**
+`Scanner leitor = new Scanner(System.in);`
+
+**Fechar o Scanner:**
+`leitor.close();`
+
+---
+
+Sintaxe Clássica: Não esquecer o break, senão ele executa os casos de baixo.
+
+**Exemplo:**
+
+switch (dia) {
+    case 1:
+        System.out.println("Domingo");
+        break;
+    case 2:
+        System.out.println("Segunda");
+        break;
+    case 3:
+        System.out.println("Terça");
+        break;
+    default:
+        System.out.println("Dia inválido");
+}

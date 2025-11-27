@@ -1,0 +1,79 @@
+# Docker - Comandos Básicos:
+
+Os comandos mais utilizados no dia a dia.
+
+## 1. Contêineres (Ciclo de Vida):
+
+**Criar e rodar um contêiner (a partir de uma imagem):**
+`docker run <nome_da_imagem>`
+
+**Exemplo com portas (-p), e em segundo plano (-d):**
+`docker run -d -p 8080:80 nginx`
+
+**Listar contêineres em execução:**
+`docker os`
+
+**Listar TODOS os contêineres (incluindo os parados):**
+`docker ps -a`
+
+**Parar um contêiner:**
+`docker stop <id_ou_nome_do_container>`
+
+**Iniciar um contêiner parado:**
+`docker start <id_ou_nome_do_container>`
+
+**Remover um contêiner (precisa estar parado):**
+`docker rm <id_ou_nome_do_container>`
+
+**Forçar parada e remoção imediata:**
+`docker rm -f <id_ou_nome_do_container>`
+
+---
+
+## 2. Imagens:
+
+**Listar imagens baixadas localmente:**
+`docker images`
+
+**Baixar uma imagem (sem rodar):**
+`docker pull <nome_da_imagem>`
+
+**Remover uma imagem local:**
+`docker rmi <nome_da_imagem>`
+
+**Construir uma imagem a partir de um Dockerfile:**
+# O ponto (.) indica que o Dockerfile está na pasta atual
+`docker build -t <nome_da_minha_imagem> .`
+
+---
+
+## 3. Ações e Debug:
+
+**Ver os logs de um contêiner:**
+`docker logs <id_ou_nome_do_container>`
+
+**Para acompanhar os logs em tempo real:**
+`docker logs -f <id_ou_nome_do_container>`
+
+**Entrar no terminal de um contêiner rodando:**
+`docker exec -it <id_ou_nome_do_container> bash`
+
+**Ou, se não tiver bash:**
+`docker exec -it <id_ou_nome_do_container> sh`
+
+---
+
+## 4. Limpeza:
+
+**Limpar tudo que não está em uso (contêineres parados, redes, imagens pendentes):**
+`docker system prune`
+
+---
+
+## 5. Docker Compose:
+
+**Subir toda a aplicação (definida no docker-compose.yml):**
+`docker-compose up -d`
+
+**Derrubar a aplicação e remover contêineres:**
+`docker-compose down`
