@@ -10,16 +10,16 @@ public class Task05 {
         double percBrancos, percNulos, percValidos;
 
         System.out.print("Digite o Total de Eleitores: ");
-        total = entrada.nextInt();
+        total = sc.nextInt();
 
         System.out.print("Digite o Número de Votos Brancos: ");
-        brancos = entrada.nextInt();
+        brancos = sc.nextInt();
 
         System.out.print("Digite o Número de Votos Nulos: ");
-        nulos = entrada.nextInt();
+        nulos = sc.nextInt();
 
         System.out.print("Digite o Número de Votos Válidos: ");
-        validos = entrada.nextInt();
+        validos = sc.nextInt();
 
         percBrancos = (brancos * 100.0) / total;
         percNulos = (nulos * 100.0) / total;
