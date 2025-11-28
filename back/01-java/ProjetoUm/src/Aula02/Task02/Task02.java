@@ -58,6 +58,23 @@ public class Task02 {
 
             } else if (opcao == 2) {
                 System.out.println("\n-- Listar Estoque --");
+                System.out.println("\nID | Nome             | Quantidade | Preço");
+                System.out.println("\n-----------------------------------------\n");
+
+                boolean temProduto = false;
+
+                for (int i = 0; i < CAPACIDADE_MAX; i++) {
+                    if (listaNomes[i] != null) {
+                        System.out.printf("%d  |  %-14s  | %3d  | R$ %.2f \n",
+                                i, listaNomes[i], listaQuantidades[i], listaPrecos[i]);
+
+                        temProduto = true;
+                    }
+                }
+
+                if (!temProduto) {
+                    System.out.println("Nenhum Produto Cadastrado!");
+                }
 
             } else if (opcao == 3) {
                 System.out.println("\n-- Buscar Produto --");
@@ -71,11 +88,11 @@ public class Task02 {
                     System.out.print("\nNome do Produto: ");
                     String nomeBusca = scanner.nextLine();
 
-                    boolean encontrou = false;
+                    boolean achouProduto = false;
 
                     for (int i = 0; i < CAPACIDADE_MAX; i++) {
                         if (listaNomes[i] != null && listaNomes[i].equals(nomeBusca)) {
-                            encontrou = true;
+                            achouProduto = true;
 
                             System.out.println("\nEstoque Atual: " + listaQuantidades[i]);
                             System.out.print("\nQuantidade de Venda: ");
@@ -91,7 +108,7 @@ public class Task02 {
                         }
                     }
 
-                    if (!encontrou) {
+                    if (!achouProduto) {
                         System.out.println("\nNão Encontrado!");
                     }
                 }
