@@ -1,0 +1,120 @@
+pipeline {
+    agent any
+
+    options {
+        timestamps()
+        timeout(time: 20, unit: 'MINUTES')
+        parallelsAlwaysFailFast()
+    }
+
+    environment {
+        APP_NAME            = "VetCare-System"
+        BACKEND_DIR         = "src/main/java"
+        FRONTEND_DIR        = "src/main/web"
+        BUILD_ARTIFACT      = "VetCare.jar"
+        GIT_LFS_SKIP_SMUDGE = "1"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Iniciando checkout do código...'
+                checkout scm
+            }
+        }
+
+        stage('Quality Gates') {
+            parallel {
+                stage('Lint Backend (Java)') {
+                    steps {
+                        echo '[LINT] Verificando padrão de código Java (Checkstyle)...'
+                        sh '''
+                            echo "Checkstyle executado com sucesso!"
+                            sleep 2
+                        '''
+                    }
+                }
+
+                stage('Lint Frontend (TSX)') {
+                    steps {
+                        echo '[LINT] Verificando regras do TypeScript (ESLint)...'
+                        sh '''
+                            echo "ESLint executado com sucesso!"
+                            sleep 2
+                        '''
+                    }
+                }
+
+                stage('Security Scan (SAST)') {
+                    steps {
+                        echo '[SEC] Buscando vulnerabilidades e segredos...'
+                        sh '''
+                            echo "Scan SAST completo!"
+                            echo "Nenhuma vulnerabilidade crítica encontrada."
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                echo 'Rodando testes unitários...'
+                sh '''
+                    cat <<EOF > relatorio-testes.xml
+                    <testsuites>
+                        <testsuite name="FrontendTests" tests="3" failures="1">
+                            <testcase name="BotaoLogin_DeveEstarVisivel" classname="UI" time="0.1"/>
+                            <testcase name="CampoSenha_DeveEstarOculto" classname="UI" time="0.2"/>
+                            <testcase name="BotaoEnviar_DeveDesabilitarSeVazio" classname="UI" time="0.3">
+                                <failure message="O botão continuou habilitado.">
+                                    Esperava false mas veio true!
+                                </failure>
+                            </testcase>
+                        </testsuite>
+                    </testsuites>
+                    EOF
+                '''
+            }
+            post {
+                always {
+                    junit 'relatorio-testes.xml'
+                }
+            }
+        }
+
+        stage('Build & Package') {
+            steps {
+                echo 'Iniciando empacotamento da aplicação...'
+                sh '''
+                    sleep 2
+                    echo "Este arquivo contém o binário compilado!" > ${BUILD_ARTIFACT}
+                '''
+                echo 'Build finalizado com sucesso!'
+            }
+            post {
+                success {
+                    archiveArtifacts artifacts: '*.jar', fingerprint: true
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'SUCESSO: Pipeline aprovado nos Quality Gates (Rafael) e Build (Vitor)!'
+            echo 'Relatórios e artefatos disponíveis no Jenkins.'
+        }
+
+        failure {
+            echo 'FALHA: Pipeline interrompido.'
+            echo 'Verifique Lint, Testes ou Security Scan.'
+        }
+
+        always {
+            echo 'Limpando workspace...'
+            cleanWs()
+            echo 'Execução finalizada!'
+        }
+    }
+}
