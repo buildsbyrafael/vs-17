@@ -1,10 +1,7 @@
 pipeline {
+    
     agent any
-
-    tools {
-        'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner' 
-    }
-
+    
     environment {
         REPO_URL = 'https://github.com/buildsbyrafael/vs-17.git'
         SONAR_PROJECT_KEY = 'JavaWars-Grogu' 
@@ -22,24 +19,25 @@ pipeline {
         stage('Análise SonarQube') {
             steps {
                 script {
+                    def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    
                     def caminhoDoProjeto = 'back/03-qa/ci_cd/task02/VS17-HoloNetBuilders'
                     
                     echo "Entrando na pasta: ${caminhoDoProjeto}"
                     
                     dir(caminhoDoProjeto) { 
                         echo 'Iniciando Scanner do JavaWars...'
-                        sh 'ls -la' 
-
+                        
                         withSonarQubeEnv('sonar-server') {
-                            sh '''
-                                sonar-scanner \
+                            sh """
+                                ${scannerHome}/bin/sonar-scanner \
                                 -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
                                 -Dsonar.projectName="JavaWars - RPG" \
                                 -Dsonar.sources=src \
                                 -Dsonar.java.binaries=src \
                                 -Dsonar.sourceEncoding=UTF-8 \
                                 -Dsonar.loglevel=INFO
-                            '''
+                            """
                         }
                     }
                 }
