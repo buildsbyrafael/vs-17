@@ -79,6 +79,12 @@ pipeline {
             post {
                 always {
                     junit 'relatorio-testes.xml'
+                    
+                    script {
+                        if (currentBuild.result == 'UNSTABLE') {
+                            error("CRÍTICO: Testes falharam! Cancelando Build & Package para economizar recursos.")
+                        }
+                    }
                 }
             }
         }
@@ -117,4 +123,3 @@ pipeline {
             echo 'Execução finalizada!'
         }
     }
-}
