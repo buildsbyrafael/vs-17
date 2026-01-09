@@ -1,9 +1,8 @@
 pipeline {
-
     agent any
 
     tools {
-        'org.jenkinsci.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner' 
+        'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner' 
     }
 
     environment {
@@ -29,7 +28,6 @@ pipeline {
                     
                     dir(caminhoDoProjeto) { 
                         echo 'Iniciando Scanner do JavaWars...'
-                        
                         sh 'ls -la' 
 
                         withSonarQubeEnv('sonar-server') {
