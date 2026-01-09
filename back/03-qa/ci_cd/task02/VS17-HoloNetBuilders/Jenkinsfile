@@ -1,0 +1,69 @@
+pipeline {
+
+    agent any
+
+    tools {
+        'org.jenkinsci.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner' 
+    }
+
+    environment {
+        REPO_URL = 'https://github.com/buildsbyrafael/vs-17.git'
+        SONAR_PROJECT_KEY = 'JavaWars-Grogu' 
+    }
+
+    stages {
+        stage('Checkout Código') {
+            steps {
+                echo 'Baixando o repositório...'
+                cleanWs()
+                git branch: 'main', url: "${REPO_URL}"
+            }
+        }
+
+        stage('Análise SonarQube') {
+            steps {
+                script {
+                    def caminhoDoProjeto = 'back/03-qa/ci_cd/task02/VS17-HoloNetBuilders'
+                    
+                    echo "Entrando na pasta: ${caminhoDoProjeto}"
+                    
+                    dir(caminhoDoProjeto) { 
+                        echo 'Iniciando Scanner do JavaWars...'
+                        
+                        sh 'ls -la' 
+
+                        withSonarQubeEnv('sonar-server') {
+                            sh '''
+                                sonar-scanner \
+                                -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                                -Dsonar.projectName="JavaWars - RPG" \
+                                -Dsonar.sources=src \
+                                -Dsonar.java.binaries=src \
+                                -Dsonar.sourceEncoding=UTF-8 \
+                                -Dsonar.loglevel=INFO
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+        
+        stage('Quality Gate') {
+            steps {
+                echo 'Aguardando veredito do SonarQube...'
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Código Aprovado! A Força é poderosa neste código.'
+        }
+        failure {
+            echo 'Bloqueado pelo Quality Gate! Verifique o Dashboard do SonarQube.'
+        }
+    }
+}
