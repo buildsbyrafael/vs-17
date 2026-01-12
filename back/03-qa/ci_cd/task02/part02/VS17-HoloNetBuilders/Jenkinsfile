@@ -1,7 +1,7 @@
 pipeline {
-    
+
     agent any
-    
+
     environment {
         REPO_URL = 'https://github.com/buildsbyrafael/vs-17.git'
         SONAR_PROJECT_KEY = 'JavaWars-Grogu' 
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     
-                    def caminhoDoProjeto = 'back/03-qa/ci_cd/task02/VS17-HoloNetBuilders'
+                    def caminhoDoProjeto = 'back/03-qa/ci_cd/task02/part02/VS17-HoloNetBuilders'
                     
                     echo "Entrando na pasta: ${caminhoDoProjeto}"
                     
