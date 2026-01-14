@@ -1,0 +1,785 @@
+{
+	"info": {
+		"_postman_id": "f33419e9-966c-4708-9bca-d6e2bee93038",
+		"name": "Vem Ser 17 - Task 1",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37478212",
+		"_collection_link": "https://rafalinhares-dev-7357622.postman.co/workspace/Rafael-Linhares's-Workspace~66a8054c-5553-47f6-8053-72f4228c03c3/collection/51494668-f33419e9-966c-4708-9bca-d6e2bee93038?action=share&source=collection_link&creator=37478212"
+	},
+	"item": [
+		{
+			"name": "[CT-00] Cadastrar Usuário (Positivo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Rafael Postman\",\r\n  \"email\": \"rafael.postman@dbc.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-01] Login (Positivo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rafael.postman@qa.com.br\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-02] Login com Senha Errada (Negativo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rafael.postman@qa.com.br\",\r\n  \"password\": \"senhaerrada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-03] Login com formato de email inválido (Negativo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"https://www.google.com/search?q=emailsemarroba.com\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-04] Cadastrar novo usuário administrador (Positivo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Rafael\",\r\n  \"email\": \"rafael.postman@dbc.com\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-05] Cadastro com Email Duplicado (Negativo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Rafael Postman\",\r\n  \"email\": \"rafael.postman@qa.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-06] Cadastro com campo obrigatório vazio (Negativo)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Rafael Postman\",\r\n  \"email\": \"rafael.postman@qa.com\",\r\n  \"password\": \"\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-07] Cadastrar Produto (Positivo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Logitech\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-08] Cadastrar produto com nome duplicado (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Postman\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-09] Cadastrar produto sem Token de acesso (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Postman\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-10]  Editar produto com sucesso (Positivo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Logitech\",\r\n  \"preco\": 155,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/7dnAKdDX6UJcjb63",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"7dnAKdDX6UJcjb63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-11]  Editar produto sem permissão de administrador (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Postman\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/4ndAKdXZQ3Jcjb63",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"4ndAKdXZQ3Jcjb63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-12] Editar quantidade do produto para número negativo (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Postman\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": -1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/7dnAKdDX6UJcjb63",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"7dnAKdDX6UJcjb63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-13] Excluir produto com sucesso (Positivo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teclado Postman\",\r\n  \"preco\": 150,\r\n  \"descricao\": \"Teclado Gamer\",\r\n  \"quantidade\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/7dnAKdDX6UJcjb63",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"7dnAKdDX6UJcjb63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-14] Excluir produto que não existe (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Logitech MX Vertical\",\r\n  \"preco\": 470,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 333\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/2xzKmdDX5KCcjb31",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"2xzKmdDX5KCcjb31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-15] Excluir produto sem Token de Acesso (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "invalido",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Logitech MX Vertical\",\r\n  \"preco\": 470,\r\n  \"descricao\": \"Mouse\",\r\n  \"quantidade\": 333\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/produtos/A4RNYXHG3y66QOe7",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"produtos",
+						"A4RNYXHG3y66QOe7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-16]  Excluir usuário com sucesso (Positivo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/66c8Y9BnGTMdK5Ov",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"66c8Y9BnGTMdK5Ov"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-17]  Excluir usuário que não existe (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/66c8Y9BnGTMdK5Oe",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"66c8Y9BnGTMdK5Oe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-18]  Excluir usuário sem Token de Acesso (Negativo)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/OIhmmg8Ce4fdcKSv",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"OIhmmg8Ce4fdcKSv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-19]  Editar usuário com sucesso (Positivo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Vitor Postman\",\r\n  \"email\": \"vitorteste2.postman@qa.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/27yATlOjhdtHurSz",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"27yATlOjhdtHurSz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-20] Editar usuário com formato de e-mail inválido (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Vitor Postman\",\r\n  \"email\": \"vitorqagmail.com\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/27yATlOjhdtHurSz",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"27yATlOjhdtHurSz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CT-21] Editar usuário com um e-mail já cadastrado (Negativo)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{tokenDeAcesso}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Vitor Postman\",\r\n  \"email\": \"vitorteste2.postman@qa.com.br\",\r\n  \"password\": \"1234\",\r\n  \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/5DbF8NiM66viFqmS",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"5DbF8NiM66viFqmS"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://template.postman-echo.com"
+		}
+	]
+}
