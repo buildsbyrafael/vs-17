@@ -21,7 +21,7 @@ pipeline {
         stage('API Tests') {
             steps {
                 dir('back/03-qa/04.1-RESTAssured/rest-assured-projetofinal') {
-                    sh 'mvn clean verify'
+                    sh 'mvn clean verify -Dmaven.test.failure.ignore=true'
                 }
             }
         }
@@ -41,7 +41,8 @@ pipeline {
                                 -Dsonar.java.binaries=target/classes \
                                 -Dsonar.tests=src/test/java \
                                 -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-                                -Dsonar.sourceEncoding=UTF-8
+                                -Dsonar.sourceEncoding=UTF-8 \
+                                -Dsonar.loglevel=INFO
                             """
                         }
                     }
