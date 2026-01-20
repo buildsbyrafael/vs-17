@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
+
     environment {
         REPO_URL = 'https://github.com/buildsbyrafael/vs-17.git'
         SONAR_PROJECT_KEY = 'RestAssured-ProjetoFinal'
