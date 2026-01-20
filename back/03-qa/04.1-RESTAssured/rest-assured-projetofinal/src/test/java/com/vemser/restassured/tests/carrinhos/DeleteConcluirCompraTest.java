@@ -29,7 +29,7 @@ public class DeleteConcluirCompraTest {
 
     @BeforeAll
     public static void setup() {
-        RestAssured.baseURI = "http://localhost:3000";
+        RestAssured.baseURI = "http://host.docker.internal:3000";
 
         UsuarioModel admin = UsuarioDataFactory.criarUsuarioValido();
         usuarioClient.cadastrarUsuario(admin).then().statusCode(201);

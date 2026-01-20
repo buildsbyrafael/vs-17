@@ -16,7 +16,7 @@ public class PostUsuariosTest {
 
     @BeforeAll
     public static void setup() {
-        RestAssured.baseURI = "http://localhost:3000";
+        RestAssured.baseURI = "http://host.docker.internal:3000";
     }
 
     @Test

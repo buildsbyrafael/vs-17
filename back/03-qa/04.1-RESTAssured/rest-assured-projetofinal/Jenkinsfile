@@ -18,10 +18,10 @@ pipeline {
             }
         }
 
-        stage('API Tests - Login Only') {
+        stage('API Tests') {
             steps {
                 dir('back/03-qa/04.1-RESTAssured/rest-assured-projetofinal') {
-                    sh 'mvn test -Dtest=LoginTest'
+                    sh 'mvn test'
                 }
             }
         }
@@ -60,10 +60,10 @@ pipeline {
     
     post {
         success {
-            echo 'Teste de Login concluído com sucesso!'
+            echo 'Projeto Final concluído com sucesso!'
         }
         failure {
-            echo 'O Teste de Login ou o Sonar falharam!'
+            echo 'Ocorreu uma falha no pipeline.'
         }
     }
 }
