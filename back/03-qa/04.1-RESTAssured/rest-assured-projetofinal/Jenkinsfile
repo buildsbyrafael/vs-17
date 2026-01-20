@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/SEU_USUARIO/rest-assured-projetofinal.git'
+        REPO_URL = 'https://github.com/buildsbyrafael/vs-17.git'
         SONAR_PROJECT_KEY = 'RestAssured-ProjetoFinal'
     }
 
@@ -16,7 +16,9 @@ pipeline {
 
         stage('API Tests') {
             steps {
-                sh 'mvn test'
+                dir('back/03-qa/04.1-RESTAssured/rest-assured-projetofinal') {
+                    sh 'mvn test'
+                }
             }
         }
 
@@ -25,17 +27,19 @@ pipeline {
                 script {
                     def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     
-                    withSonarQubeEnv('sonar-server') {
-                        sh """
-                            ${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
-                            -Dsonar.projectName="QA-RestAssured-Final" \
-                            -Dsonar.sources=src/main/java \
-                            -Dsonar.java.binaries=target/classes \
-                            -Dsonar.tests=src/test/java \
-                            -Dsonar.sourceEncoding=UTF-8 \
-                            -Dsonar.loglevel=INFO
-                        """
+                    dir('back/03-qa/04.1-RESTAssured/rest-assured-projetofinal') {
+                        withSonarQubeEnv('sonar-server') {
+                            sh """
+                                ${scannerHome}/bin/sonar-scanner \
+                                -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                                -Dsonar.projectName="QA-RestAssured-Final" \
+                                -Dsonar.sources=src/main/java \
+                                -Dsonar.java.binaries=target/classes \
+                                -Dsonar.tests=src/test/java \
+                                -Dsonar.sourceEncoding=UTF-8 \
+                                -Dsonar.loglevel=INFO
+                            """
+                        }
                     }
                 }
             }
