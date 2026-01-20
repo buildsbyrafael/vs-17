@@ -24,8 +24,8 @@ public class LoginTest {
     @DisplayName("Cenário 01: Login com credenciais válidas (Positivo)")
     public void deveRealizarLoginComSucesso() {
         UsuarioModel usuarioValido = UsuarioModel.builder()
-                .email("rafael.postman@qa.com.br")
-                .password("1234")
+                .email("fulano@qa.com")
+                .password("teste")
                 .build();
 
         Response response = loginClient.realizarLogin(usuarioValido);
@@ -40,7 +40,7 @@ public class LoginTest {
     @DisplayName("Cenário 02: Login com senha incorreta (Negativo)")
     public void naoDeveLogarComSenhaIncorreta() {
         UsuarioModel usuarioSenhaErrada = UsuarioModel.builder()
-                .email("rafael.postman@qa.com.br")
+                .email("fulano@qa.com")
                 .password("senhaerrada")
                 .build();
 
