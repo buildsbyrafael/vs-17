@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f62658ef-a97a-4a52-bf28-f52f98c8d573" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/CarrinhoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/LoginClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/ProdutoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/UsuarioClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/CarrinhoDataFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/ProdutoDataFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/UsuarioDataFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/CarrinhoModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/ProdutoCarrinhoModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/ProdutoModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/UsuarioModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/DeleteCarrinhosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/DeleteConcluirCompraTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/GetCarrinhosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/PostCarrinhosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/login/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/DeleteProdutosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/GetProdutosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/PostProdutosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/PutProdutosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/DeleteUsuariosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/GetUsuariosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/PostUsuariosTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/PutUsuariosTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="38PDEVc4G5brlWd8VFpHGkDBAFK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BuscarUsuarioPorIdNegativoTest.executor": "Run",
+    "JUnit.BuscarUsuarioPorIdPositivoTest.executor": "Run",
+    "JUnit.CadastrarUsuarioNegativoTest.executor": "Run",
+    "JUnit.CadastrarUsuarioPositivoTest.executor": "Run",
+    "JUnit.CadastroCampoVazioTest.executor": "Run",
+    "JUnit.DeleteCarrinhosTest.executor": "Run",
+    "JUnit.DeleteProdutosTest.executor": "Run",
+    "JUnit.DeleteUsuariosTest.executor": "Run",
+    "JUnit.EditarUsuarioEmailDuplicadoTest.executor": "Run",
+    "JUnit.EditarUsuarioEmailInvalidoTest.executor": "Run",
+    "JUnit.EditarUsuarioPositivoTest.executor": "Run",
+    "JUnit.ExcluirUsuarioInexistenteTest.executor": "Run",
+    "JUnit.ExcluirUsuarioPositivoTest.executor": "Run",
+    "JUnit.ExcluirUsuarioSemTokenTest.executor": "Run",
+    "JUnit.GetCarrinhosTest.executor": "Run",
+    "JUnit.GetProdutosTest.executor": "Run",
+    "JUnit.GetUsuariosTest.executor": "Run",
+    "JUnit.ListarUsuarioNegativoTest.executor": "Run",
+    "JUnit.ListarUsuariosTest.executor": "Run",
+    "JUnit.LoginEmailInvalidoTest.executor": "Run",
+    "JUnit.LoginNegativoTest.executor": "Run",
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.PostCarrinhosTest.executor": "Run",
+    "JUnit.PostProdutosTest.executor": "Run",
+    "JUnit.PostUsuariosTest.executor": "Run",
+    "JUnit.ProdutoTest.executor": "Run",
+    "JUnit.PutProdutosTest.executor": "Run",
+    "JUnit.PutUsuariosTest.executor": "Run",
+    "JUnit.UsuarioTest.executor": "Run",
+    "JUnit.UsuariosTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/rafael.linhares/Documents/vs-17/back/03-qa/04.1-RESTAssured/rest-assured-task2/src/test/java/com/vemser/restassured/tests/model",
+    "onboarding.tips.debug.path": "C:/Users/rafael.linhares/Desktop/rest-assured-task1/src/main/java/org/example/Main.java"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rafael.linhares\Documents\vs-17\back\03-qa\04.1-RESTAssured\rest-assured-task2\src\test\java\com\vemser\restassured\tests\model" />
+      <recent name="C:\Users\rafael.linhares\Documents\vs-17\back\03-qa\04.1-RESTAssured\rest-assured-task2\src\test\java\com\vemser\restassured\tests" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.GetCarrinhosTest">
+    <configuration name="DeleteCarrinhosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-assured-task1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vemser.restassured.tests.carrinhos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vemser.restassured.tests.carrinhos" />
+      <option name="MAIN_CLASS_NAME" value="com.vemser.restassured.tests.carrinhos.DeleteCarrinhosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteProdutosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-assured-task1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vemser.restassured.tests.produtos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vemser.restassured.tests.produtos" />
+      <option name="MAIN_CLASS_NAME" value="com.vemser.restassured.tests.produtos.DeleteProdutosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetCarrinhosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-assured-task1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vemser.restassured.tests.carrinhos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vemser.restassured.tests.carrinhos" />
+      <option name="MAIN_CLASS_NAME" value="com.vemser.restassured.tests.carrinhos.GetCarrinhosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetProdutosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-assured-task1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vemser.restassured.tests.produtos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vemser.restassured.tests.produtos" />
+      <option name="MAIN_CLASS_NAME" value="com.vemser.restassured.tests.produtos.GetProdutosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostCarrinhosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rest-assured-task1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.vemser.restassured.tests.carrinhos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.vemser.restassured.tests.carrinhos" />
+      <option name="MAIN_CLASS_NAME" value="com.vemser.restassured.tests.carrinhos.PostCarrinhosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GetCarrinhosTest" />
+        <item itemvalue="JUnit.DeleteCarrinhosTest" />
+        <item itemvalue="JUnit.PostCarrinhosTest" />
+        <item itemvalue="JUnit.GetProdutosTest" />
+        <item itemvalue="JUnit.DeleteProdutosTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f62658ef-a97a-4a52-bf28-f52f98c8d573" name="Changes" comment="" />
+      <created>1768692206920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768692206920</updated>
+    </task>
+    <servers />
+  </component>
+</project>

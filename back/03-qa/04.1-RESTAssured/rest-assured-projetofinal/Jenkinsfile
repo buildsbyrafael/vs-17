@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    environment {
+        REPO_URL = 'https://github.com/SEU_USUARIO/rest-assured-projetofinal.git'
+        SONAR_PROJECT_KEY = 'RestAssured-ProjetoFinal'
+    }
+
+    stages {
+        stage('Checkout Código') {
+            steps {
+                cleanWs()
+                git branch: 'main', url: "${REPO_URL}"
+            }
+        }
+
+        stage('API Tests') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Análise SonarQube') {
+            steps {
+                script {
+                    def scannerHome = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    
+                    withSonarQubeEnv('sonar-server') {
+                        sh """
+                            ${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=${SONAR_PROJECT_KEY} \
+                            -Dsonar.projectName="QA-RestAssured-Final" \
+                            -Dsonar.sources=src/main/java \
+                            -Dsonar.java.binaries=target/classes \
+                            -Dsonar.tests=src/test/java \
+                            -Dsonar.sourceEncoding=UTF-8 \
+                            -Dsonar.loglevel=INFO
+                        """
+                    }
+                }
+            }
+        }
+        
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline Concluído com Sucesso!'
+        }
+        failure {
+            echo 'O Pipeline falhou!'
+        }
+    }
+}
