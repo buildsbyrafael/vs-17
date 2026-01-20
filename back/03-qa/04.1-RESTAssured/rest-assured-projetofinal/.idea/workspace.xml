@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f62658ef-a97a-4a52-bf28-f52f98c8d573" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/CarrinhoClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/LoginClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/ProdutoClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/client/UsuarioClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/CarrinhoDataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/ProdutoDataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/factory/UsuarioDataFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/CarrinhoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/ProdutoCarrinhoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/ProdutoModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/vemser/restassured/model/UsuarioModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/DeleteCarrinhosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/DeleteConcluirCompraTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/GetCarrinhosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/carrinhos/PostCarrinhosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/login/LoginTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/DeleteProdutosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/GetProdutosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/PostProdutosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/produtos/PutProdutosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/DeleteUsuariosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/GetUsuariosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/PostUsuariosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/usuarios/PutUsuariosTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/login/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vemser/restassured/tests/login/LoginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rafael.linhares/Documents/vs-17/back/03-qa/04.1-RESTAssured/rest-assured-task2/src/test/java/com/vemser/restassured/tests/model",
+    "last_opened_file_path": "C:/Users/rafael.linhares/Documents/vs-17/back/03-qa/04.1-RESTAssured/rest-assured-projetofinal",
     "onboarding.tips.debug.path": "C:/Users/rafael.linhares/Desktop/rest-assured-task1/src/main/java/org/example/Main.java"
   }
 }]]></component>
