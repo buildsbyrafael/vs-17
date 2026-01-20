@@ -21,7 +21,7 @@ pipeline {
         stage('API Tests') {
             steps {
                 dir('back/03-qa/04.1-RESTAssured/rest-assured-projetofinal') {
-                    sh 'mvn test'
+                    sh 'mvn clean verify'
                 }
             }
         }
@@ -40,8 +40,8 @@ pipeline {
                                 -Dsonar.sources=src/main/java \
                                 -Dsonar.java.binaries=target/classes \
                                 -Dsonar.tests=src/test/java \
-                                -Dsonar.sourceEncoding=UTF-8 \
-                                -Dsonar.loglevel=INFO
+                                -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+                                -Dsonar.sourceEncoding=UTF-8
                             """
                         }
                     }
@@ -55,15 +55,6 @@ pipeline {
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
-    }
-    
-    post {
-        success {
-            echo 'Projeto Final concluído com sucesso!'
-        }
-        failure {
-            echo 'Ocorreu uma falha no pipeline.'
         }
     }
 }
