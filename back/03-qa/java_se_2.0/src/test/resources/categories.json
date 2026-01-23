@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Falhas de Validação (Bug Negócio)",
+    "matchedStatuses": [
+      "failed"
+    ],
+    "traceRegex": ".*AssertionError.*"
+  },
+  {
+    "name": "Timeout (Lentidão ou Elemento Ausente)",
+    "matchedStatuses": [
+      "broken"
+    ],
+    "traceRegex": ".*TimeoutException.*"
+  },
+  {
+    "name": "Elemento Não Encontrado (Seletor Quebrado)",
+    "matchedStatuses": [
+      "broken"
+    ],
+    "traceRegex": ".*NoSuchElementException.*"
+  },
+  {
+    "name": "Erros de Infraestrutura/Java",
+    "matchedStatuses": [
+      "broken"
+    ]
+  }
+]
