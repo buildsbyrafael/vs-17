@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Pro</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <!-- Login Container -->
+    <div id="login-container" class="container visible">
+        <div class="glass-card">
+            <h1>Bem-vindo ao <span class="brand">TaskMaster</span></h1>
+            <p class="subtitle">Organize sua vida com elegância.</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" placeholder="Digite seu usuário" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn-primary" id="login-ws">Entrar</button>
+                <div id="login-error" class="hidden">Usuário ou senha inválidos.</div>
+            </form>
+            <div class="hint">
+                <p>Não tem uma conta? <a href="#" id="goto-register">Cadastre-se</a></p>
+                <small>Dica: admin / admin123</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Container -->
+    <div id="register-container" class="container hidden">
+        <div class="glass-card">
+            <h1>Crie sua conta</h1>
+            <p class="subtitle">Junte-se ao time.</p>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="reg-name">Nome Completo</label>
+                    <input type="text" id="reg-name" placeholder="Seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-user">Usuário</label>
+                    <input type="text" id="reg-user" placeholder="Escolha um usuário" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-pass">Senha</label>
+                    <input type="password" id="reg-pass" placeholder="Escolha uma senha" required>
+                </div>
+                <button type="submit" class="btn-primary" id="register-btn">Cadastrar</button>
+            </form>
+            <div class="hint">
+                <p>Já tem conta? <a href="#" id="goto-login">Faça Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div id="dashboard-container" class="container hidden">
+        <nav class="navbar">
+            <div class="brand">TaskMaster</div>
+            <div class="nav-links">
+                <a href="#" id="nav-dashboard" class="active">Tarefas</a>
+                <a href="#" id="nav-kanban">Projetos</a>
+                <a href="#" id="nav-team">Equipe</a>
+                <a href="#" id="nav-profile">Perfil</a>
+                <a href="#" id="nav-settings">Configurações</a>
+            </div>
+            <div class="user-info">
+                <span id="welcome-msg">Olá, Usuário</span>
+                <div class="user-avatar-mini"></div>
+                <button id="logout-btn" class="btn-secondary">Sair</button>
+            </div>
+        </nav>
+
+        <!-- View 1: Dashboard (Simple List) -->
+        <main class="dashboard-content" id="view-dashboard">
+            <div class="glass-card task-card">
+                <h2>Suas Tarefas</h2>
+                <div class="add-task-form">
+                    <input type="text" id="new-task" placeholder="O que você precisa fazer hoje?">
+                    <button id="add-task-btn" class="btn-primary">Adicionar</button>
+                </div>
+                <ul id="task-list">
+                    <!-- Tasks will appear here -->
+                </ul>
+                <div class="empty-state" id="empty-state">
+                    <p>Nenhuma tarefa pendente. Você está livre!</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- View 2: Projects (Kanban - Advanced Logic) -->
+        <main class="dashboard-content hidden full-width" id="view-kanban">
+            <h2>Quadro de Projetos</h2>
+            <div class="kanban-board">
+                <div class="kanban-column" id="col-todo">
+                    <div class="col-header">
+                        <h3>A Fazer</h3><span class="count">0</span>
+                    </div>
+                    <div class="col-body"></div>
+                </div>
+                <div class="kanban-column" id="col-doing">
+                    <div class="col-header">
+                        <h3>Em Andamento</h3><span class="count">0</span>
+                    </div>
+                    <div class="col-body"></div>
+                </div>
+                <div class="kanban-column" id="col-done">
+                    <div class="col-header">
+                        <h3>Concluído</h3><span class="count">0</span>
+                    </div>
+                    <div class="col-body"></div>
+                </div>
+            </div>
+            <div class="kanban-controls">
+                <button id="add-project-btn" class="btn-primary">Novo Card</button>
+            </div>
+        </main>
+
+        <!-- View 3: Team (Table - Data & Actions) -->
+        <main class="dashboard-content hidden" id="view-team">
+            <div class="glass-card full-card">
+                <h2>Gestão de Equipe</h2>
+                <div class="table-actions">
+                    <input type="text" id="search-member" placeholder="Buscar por nome...">
+                    <button id="add-member-btn" class="btn-primary">Novo Membro</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Status</th>
+                            <th>Nível</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="team-tbody">
+                        <!-- Rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- View 4: Profile (Complex Form) -->
+        <main class="dashboard-content hidden" id="view-profile">
+            <div class="glass-card">
+                <h2>Meu Perfil</h2>
+                <form id="profile-form">
+                    <div class="profile-header">
+                        <div class="avatar-upload">
+                            <div id="avatar-preview"></div>
+                            <label for="avatar-input">Alterar Foto</label>
+                            <input type="file" id="avatar-input" accept="image/*" hidden>
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Nome Completo</label>
+                            <input type="text" id="profile-name" value="Administrador">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone</label>
+                            <input type="tel" id="profile-phone" placeholder="(00) 0000-0000">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Bio</label>
+                        <textarea id="profile-bio" rows="4" placeholder="Fale um pouco sobre você..."></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Conhecimentos</label>
+                        <div class="tags-input" id="skills-container">
+                            <span class="tag">Cypress <i class="remove">×</i></span>
+                            <span class="tag">JavaScript <i class="remove">×</i></span>
+                            <input type="text" id="add-skill" placeholder="+ Adicionar">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="save-profile">Salvar Perfil</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- View 5: Settings -->
+        <main class="dashboard-content hidden" id="view-settings">
+            <div class="glass-card">
+                <h2>Configurações</h2>
+                <form id="settings-form">
+                    <div class="input-group">
+                        <label>Tema</label>
+                        <select id="theme-select">
+                            <option value="dark">Escuro</option>
+                            <option value="light">Claro</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Notificações</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="email-notif" checked>
+                            <label for="email-notif">Receber alertas por e-mail</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sms-notif">
+                            <label for="sms-notif">Receber alertas por SMS</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="save-settings">Salvar Preferências</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Custom Modal -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div class="glass-card modal-card">
+                <h3>Nova Tarefa</h3>
+                <div class="input-group">
+                    <label for="modal-task-title">Título da Tarefa</label>
+                    <input type="text" id="modal-task-title" placeholder="Ex: Criar cenários de teste">
+                </div>
+                <div class="modal-actions">
+                    <button id="cancel-modal-btn" class="btn-secondary">Cancelar</button>
+                    <button id="confirm-modal-btn" class="btn-primary">Criar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Edit Modal -->
+        <div id="team-modal-overlay" class="modal-overlay hidden">
+            <div class="glass-card modal-card">
+                <h3>Editar Membro</h3>
+                <input type="hidden" id="team-edit-id">
+                <div class="input-group">
+                    <label>Nome</label>
+                    <input type="text" id="team-edit-name">
+                </div>
+                <div class="input-group">
+                    <label>Cargo</label>
+                    <input type="text" id="team-edit-role">
+                </div>
+                <div class="input-group">
+                    <label>Nível</label>
+                    <select id="team-edit-level">
+                        <option value="Junior">Junior</option>
+                        <option value="Mid">Mid</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button id="team-cancel-btn" class="btn-secondary">Cancelar</button>
+                    <button id="team-save-btn" class="btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirm-modal-overlay" class="modal-overlay hidden">
+            <div class="glass-card modal-card">
+                <h3 id="confirm-modal-title">Confirmar Ação</h3>
+                <p id="confirm-modal-msg">Tem certeza que deseja realizar esta ação?</p>
+                <div class="modal-actions">
+                    <button id="confirm-cancel-btn" class="btn-secondary">Cancelar</button>
+                    <button id="confirm-ok-btn" class="btn-primary">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toaster -->
+        <div id="toaster" class="toaster hidden">Ação realizada com sucesso!</div>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

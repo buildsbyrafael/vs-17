@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f62658ef-a97a-4a52-bf28-f52f98c8d573" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f62658ef-a97a-4a52-bf28-f52f98c8d573" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,47 +34,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BuscarUsuarioPorIdNegativoTest.executor": "Run",
-    "JUnit.BuscarUsuarioPorIdPositivoTest.executor": "Run",
-    "JUnit.CadastrarUsuarioNegativoTest.executor": "Run",
-    "JUnit.CadastrarUsuarioPositivoTest.executor": "Run",
-    "JUnit.CadastroCampoVazioTest.executor": "Run",
-    "JUnit.DeleteCarrinhosTest.executor": "Run",
-    "JUnit.DeleteProdutosTest.executor": "Run",
-    "JUnit.DeleteUsuariosTest.executor": "Run",
-    "JUnit.EditarUsuarioEmailDuplicadoTest.executor": "Run",
-    "JUnit.EditarUsuarioEmailInvalidoTest.executor": "Run",
-    "JUnit.EditarUsuarioPositivoTest.executor": "Run",
-    "JUnit.ExcluirUsuarioInexistenteTest.executor": "Run",
-    "JUnit.ExcluirUsuarioPositivoTest.executor": "Run",
-    "JUnit.ExcluirUsuarioSemTokenTest.executor": "Run",
-    "JUnit.GetCarrinhosTest.executor": "Run",
-    "JUnit.GetProdutosTest.executor": "Run",
-    "JUnit.GetUsuariosTest.executor": "Run",
-    "JUnit.ListarUsuarioNegativoTest.executor": "Run",
-    "JUnit.ListarUsuariosTest.executor": "Run",
-    "JUnit.LoginEmailInvalidoTest.executor": "Run",
-    "JUnit.LoginNegativoTest.executor": "Run",
-    "JUnit.LoginTest.executor": "Run",
-    "JUnit.PostCarrinhosTest.executor": "Run",
-    "JUnit.PostProdutosTest.executor": "Run",
-    "JUnit.PostUsuariosTest.executor": "Run",
-    "JUnit.ProdutoTest.executor": "Run",
-    "JUnit.PutProdutosTest.executor": "Run",
-    "JUnit.PutUsuariosTest.executor": "Run",
-    "JUnit.UsuarioTest.executor": "Run",
-    "JUnit.UsuariosTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rafael.linhares/Documents/vs-17/back/03-qa/04.1-RESTAssured/rest-assured-projetofinal",
-    "onboarding.tips.debug.path": "C:/Users/rafael.linhares/Desktop/rest-assured-task1/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BuscarUsuarioPorIdNegativoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BuscarUsuarioPorIdPositivoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CadastrarUsuarioNegativoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CadastrarUsuarioPositivoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CadastroCampoVazioTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteCarrinhosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteProdutosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeleteUsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EditarUsuarioEmailDuplicadoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EditarUsuarioEmailInvalidoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EditarUsuarioPositivoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExcluirUsuarioInexistenteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExcluirUsuarioPositivoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExcluirUsuarioSemTokenTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetCarrinhosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetProdutosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GetUsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListarUsuarioNegativoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ListarUsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoginEmailInvalidoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoginNegativoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PostCarrinhosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PostProdutosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PostUsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProdutoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PutProdutosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PutUsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UsuarioTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UsuariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rafael.linhares/Documents/vs-17/back/03-qa/04.1-RESTAssured/rest-assured-projetofinal&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/rafael.linhares/Desktop/rest-assured-task1/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rafael.linhares\Documents\vs-17\back\03-qa\04.1-RESTAssured\rest-assured-task2\src\test\java\com\vemser\restassured\tests\model" />

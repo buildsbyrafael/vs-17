@@ -1,0 +1,12 @@
+{
+  "user_valido": {
+    "user": "admin",
+    "pass": "admin123",
+    "text": "Olá, Administrador"
+  },
+  "user_invalido": {
+    "user": "errado",
+    "pass": "123456",
+    "text": "Usuário ou senha inválidos"
+  }
+}
