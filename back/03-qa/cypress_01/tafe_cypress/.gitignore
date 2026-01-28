@@ -1,0 +1,15 @@
+# Pastas do Sistema/Dependências
+node_modules/
+.idea/
+.vscode/
+
+# Resultado de Teste
+cypress/videos/
+cypress/screenshots/
+allure-results/
+
+# Arquivos de Ambiente
+.env*
+
+# Logs
+*.log
